@@ -1,0 +1,551 @@
+/* Terminal Theme Variables */
+:root {
+    --bg-color: #ffffff;
+    --terminal-bg: #f5f5f5;
+    --text-color: #000000;
+    --prompt-color: #333333;
+    --command-color: #000000;
+    --label-color: #444444;
+    --accent-color: #000000;
+    --highlight-color: #222222;
+    --border-color: #cccccc;
+    --scrollbar-bg: #e0e0e0;
+    --scrollbar-thumb: #999999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Terminal Window */
+.terminal-window {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: var(--terminal-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Terminal Header */
+.terminal-header {
+    background-color: #e0e0e0;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn-close {
+    background-color: #ff5f56;
+}
+
+.btn-minimize {
+    background-color: #ffbd2e;
+}
+
+.btn-maximize {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Terminal Body */
+.terminal-body {
+    padding: 20px;
+    min-height: 500px;
+}
+
+/* Command Line */
+.command-line {
+    margin-bottom: 15px;
+}
+
+.prompt {
+    color: var(--prompt-color);
+    font-weight: bold;
+}
+
+.command {
+    color: var(--command-color);
+    margin-left: 10px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background-color: var(--text-color);
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+.cursor.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    margin-bottom: 30px;
+}
+
+.ascii-art {
+    color: var(--prompt-color);
+    font-size: 0.7rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    white-space: pre;
+    font-family: 'Courier New', monospace;
+}
+
+.header-info {
+    color: var(--text-color);
+    margin-top: 15px;
+}
+
+.header-info p {
+    margin: 5px 0;
+}
+
+.label {
+    color: var(--label-color);
+    font-weight: bold;
+}
+
+.status-active {
+    color: var(--highlight-color);
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Navigation */
+.terminal-nav {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-output {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.nav-output a {
+    color: var(--label-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-output a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.output {
+    margin-top: 15px;
+}
+
+.output h2 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.output p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+/* Tree Structure */
+.tree-structure {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.tree-item {
+    color: var(--label-color);
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.tree-sub {
+    color: var(--text-color);
+    margin-left: 20px;
+    margin-top: 3px;
+}
+
+/* Projects Section */
+.project-item {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-left: 3px solid var(--prompt-color);
+    border-radius: 4px;
+}
+
+.commit-hash {
+    color: var(--highlight-color);
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.project-content h3 {
+    color: var(--label-color);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.project-content p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--command-color);
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Log Entries (Experience) */
+.log-entry {
+    margin: 15px 0;
+    padding-left: 15px;
+    border-left: 2px solid var(--prompt-color);
+}
+
+.log-time {
+    color: var(--highlight-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.log-content h3 {
+    color: var(--label-color);
+    margin-bottom: 5px;
+}
+
+.log-content p {
+    color: var(--text-color);
+    margin: 3px 0;
+    padding-left: 15px;
+}
+
+/* Education */
+.edu-block {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+}
+
+.edu-block h3 {
+    color: var(--label-color);
+    margin-bottom: 8px;
+}
+
+.cert-header {
+    color: var(--accent-color);
+    margin: 25px 0 15px 0;
+    font-size: 1.1rem;
+}
+
+.cert-list {
+    margin-top: 10px;
+}
+
+.cert-item {
+    color: var(--text-color);
+    margin: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.cert-bullet {
+    color: var(--prompt-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Achievements */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.achievement-box {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.achievement-box:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: var(--text-color);
+    transform: translateX(5px);
+}
+
+.interests-header {
+    color: var(--accent-color);
+    margin: 25px 0 15px 0;
+    font-size: 1.1rem;
+}
+
+.interests {
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+footer .output {
+    margin-top: 10px;
+}
+
+footer p {
+    color: var(--text-color);
+    margin: 5px 0;
+}
+
+.footer-hint {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.download-section {
+    margin: 20px 0;
+}
+
+.download-btn {
+    background-color: var(--prompt-color);
+    color: var(--bg-color);
+    border: 2px solid var(--text-color);
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-hint {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.final-prompt {
+    margin-top: 30px;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--prompt-color);
+    color: var(--bg-color);
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .terminal-body {
+        padding: 15px;
+    }
+
+    .ascii-art {
+        font-size: 0.4rem;
+    }
+
+    .nav-output {
+        flex-direction: column;
+    }
+
+    .nav-output a {
+        width: 100%;
+    }
+
+    .project-item {
+        flex-direction: column;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .terminal-window {
+        box-shadow: none;
+    }
+
+    .terminal-header,
+    #scrollTopBtn,
+    .download-section {
+        display: none !important;
+    }
+
+    .cursor {
+        display: none;
+    }
+    
+    .terminal-nav {
+        display: none;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+}
