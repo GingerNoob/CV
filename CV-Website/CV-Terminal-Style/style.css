@@ -149,10 +149,12 @@ header {
 
 .ascii-art {
     color: var(--prompt-color);
-    font-size: 0.6rem;
-    line-height: 1.2;
+    font-size: 0.7rem;
+    line-height: 1.1;
     margin-bottom: 20px;
     overflow-x: auto;
+    white-space: pre;
+    font-family: 'Courier New', monospace;
 }
 
 .header-info {
