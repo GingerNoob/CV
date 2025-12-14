@@ -16,6 +16,23 @@ scrollTopBtn.addEventListener('click', () => {
     });
 });
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+}
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Save theme preference
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+});
+
 // PDF Download Functionality
 const downloadPdfBtn = document.getElementById('downloadPdfBtn');
 

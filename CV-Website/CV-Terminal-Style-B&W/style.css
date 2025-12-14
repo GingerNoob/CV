@@ -11,6 +11,23 @@
     --border-color: #cccccc;
     --scrollbar-bg: #e0e0e0;
     --scrollbar-thumb: #999999;
+    --terminal-header-bg: #e0e0e0;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-color: #0c0c0c;
+    --terminal-bg: #1e1e1e;
+    --text-color: #00ff00;
+    --prompt-color: #5fd700;
+    --command-color: #ffffff;
+    --label-color: #87ceeb;
+    --accent-color: #ff6b6b;
+    --highlight-color: #ffff00;
+    --border-color: #333;
+    --scrollbar-bg: #2a2a2a;
+    --scrollbar-thumb: #555;
+    --terminal-header-bg: #2d2d2d;
 }
 
 * {
@@ -29,6 +46,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar */
@@ -55,17 +73,27 @@ body {
     margin: 0 auto;
     background-color: var(--terminal-bg);
     border-radius: 8px;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 50px rgba(0, 255, 0, 0.2);
     overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .terminal-window {
+    box-shadow: 0 10px 50px rgba(0, 255, 0, 0.2);
+}
+
+body:not(.dark-mode) .terminal-window {
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
 }
 
 /* Terminal Header */
 .terminal-header {
-    background-color: #e0e0e0;
+    background-color: var(--terminal-header-bg);
     padding: 10px 15px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
 }
 
 .terminal-buttons {
@@ -113,11 +141,13 @@ body {
 .prompt {
     color: var(--prompt-color);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .command {
     color: var(--command-color);
     margin-left: 10px;
+    transition: color 0.3s ease;
 }
 
 .cursor {
@@ -127,6 +157,7 @@ body {
     background-color: var(--text-color);
     margin-left: 5px;
     animation: blink 1s infinite;
+    transition: background-color 0.3s ease;
 }
 
 .cursor.blink {
@@ -155,11 +186,13 @@ header {
     overflow-x: auto;
     white-space: pre;
     font-family: 'Courier New', monospace;
+    transition: color 0.3s ease;
 }
 
 .header-info {
     color: var(--text-color);
     margin-top: 15px;
+    transition: color 0.3s ease;
 }
 
 .header-info p {
@@ -169,12 +202,14 @@ header {
 .label {
     color: var(--label-color);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .status-active {
     color: var(--highlight-color);
     font-weight: bold;
     animation: pulse 2s infinite;
+    transition: color 0.3s ease;
 }
 
 @keyframes pulse {
@@ -215,6 +250,10 @@ header {
     color: var(--text-color);
 }
 
+body.dark-mode .nav-output a:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
 /* Sections */
 .section {
     margin-bottom: 40px;
@@ -231,11 +270,13 @@ header {
     font-size: 1.2rem;
     margin-bottom: 15px;
     text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 .output p {
     color: var(--text-color);
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 /* Tree Structure */
@@ -248,12 +289,14 @@ header {
     color: var(--label-color);
     margin: 8px 0;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .tree-sub {
     color: var(--text-color);
     margin-left: 20px;
     margin-top: 3px;
+    transition: color 0.3s ease;
 }
 
 /* Projects Section */
@@ -265,23 +308,31 @@ header {
     background-color: rgba(0, 0, 0, 0.02);
     border-left: 3px solid var(--prompt-color);
     border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .project-item {
+    background-color: rgba(0, 255, 0, 0.05);
 }
 
 .commit-hash {
     color: var(--highlight-color);
     font-weight: bold;
     min-width: 80px;
+    transition: color 0.3s ease;
 }
 
 .project-content h3 {
     color: var(--label-color);
     margin-bottom: 8px;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .project-content p {
     color: var(--text-color);
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .tech-tags {
@@ -298,6 +349,11 @@ header {
     border-radius: 3px;
     font-size: 0.85rem;
     border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .tag {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Log Entries (Experience) */
@@ -305,23 +361,27 @@ header {
     margin: 15px 0;
     padding-left: 15px;
     border-left: 2px solid var(--prompt-color);
+    transition: border-color 0.3s ease;
 }
 
 .log-time {
     color: var(--highlight-color);
     font-weight: bold;
     margin-bottom: 5px;
+    transition: color 0.3s ease;
 }
 
 .log-content h3 {
     color: var(--label-color);
     margin-bottom: 5px;
+    transition: color 0.3s ease;
 }
 
 .log-content p {
     color: var(--text-color);
     margin: 3px 0;
     padding-left: 15px;
+    transition: color 0.3s ease;
 }
 
 /* Education */
@@ -330,17 +390,24 @@ header {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.02);
     border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .edu-block {
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .edu-block h3 {
     color: var(--label-color);
     margin-bottom: 8px;
+    transition: color 0.3s ease;
 }
 
 .cert-header {
     color: var(--accent-color);
     margin: 25px 0 15px 0;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .cert-list {
@@ -352,6 +419,7 @@ header {
     margin: 8px 0;
     padding-left: 25px;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 .cert-bullet {
@@ -359,6 +427,7 @@ header {
     position: absolute;
     left: 0;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 /* Achievements */
@@ -378,20 +447,30 @@ header {
     transition: all 0.3s ease;
 }
 
+body.dark-mode .achievement-box {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
 .achievement-box:hover {
     background-color: rgba(0, 0, 0, 0.05);
     border-color: var(--text-color);
     transform: translateX(5px);
 }
 
+body.dark-mode .achievement-box:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
 .interests-header {
     color: var(--accent-color);
     margin: 25px 0 15px 0;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .interests {
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Footer */
@@ -409,6 +488,7 @@ footer .output {
 footer p {
     color: var(--text-color);
     margin: 5px 0;
+    transition: color 0.3s ease;
 }
 
 .footer-hint {
@@ -482,6 +562,32 @@ footer p {
     transform: translateY(-3px);
 }
 
+/* Theme Toggle Button */
+#themeToggle {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    background-color: var(--prompt-color);
+    color: var(--bg-color);
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#themeToggle:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -518,6 +624,13 @@ footer p {
         width: 45px;
         height: 45px;
     }
+    
+    #themeToggle {
+        bottom: 75px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }
 
 /* Print Styles */
@@ -533,6 +646,7 @@ footer p {
 
     .terminal-header,
     #scrollTopBtn,
+    #themeToggle,
     .download-section {
         display: none !important;
     }
