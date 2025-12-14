@@ -18,12 +18,12 @@
 body.dark-mode {
     --bg-color: #0c0c0c;
     --terminal-bg: #1e1e1e;
-    --text-color: #00ff00;
-    --prompt-color: #5fd700;
+    --text-color: #ffffff;
+    --prompt-color: #cccccc;
     --command-color: #ffffff;
-    --label-color: #87ceeb;
-    --accent-color: #ff6b6b;
-    --highlight-color: #ffff00;
+    --label-color: #bbbbbb;
+    --accent-color: #ffffff;
+    --highlight-color: #dddddd;
     --border-color: #333;
     --scrollbar-bg: #2a2a2a;
     --scrollbar-thumb: #555;
@@ -79,7 +79,7 @@ body {
 }
 
 body.dark-mode .terminal-window {
-    box-shadow: 0 10px 50px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 10px 50px rgba(255, 255, 255, 0.1);
 }
 
 body:not(.dark-mode) .terminal-window {
@@ -251,7 +251,7 @@ header {
 }
 
 body.dark-mode .nav-output a:hover {
-    background-color: rgba(0, 255, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Sections */
@@ -312,7 +312,7 @@ body.dark-mode .nav-output a:hover {
 }
 
 body.dark-mode .project-item {
-    background-color: rgba(0, 255, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .commit-hash {
@@ -448,7 +448,7 @@ body.dark-mode .edu-block {
 }
 
 body.dark-mode .achievement-box {
-    background-color: rgba(0, 255, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .achievement-box:hover {
@@ -458,7 +458,7 @@ body.dark-mode .achievement-box {
 }
 
 body.dark-mode .achievement-box:hover {
-    background-color: rgba(0, 255, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .interests-header {
