@@ -1,6 +1,6 @@
 # CV Website Repository
 
-This repository contains a personal CV website with a terminal-inspired design. The website is built using HTML, CSS, and JavaScript for a responsive and interactive experience.
+This repository contains my personal CV website with a terminal-inspired design. The website is built using HTML, CSS, and JavaScript for a responsive and interactive experience.
 
 ## Version
 
